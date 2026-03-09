@@ -1,0 +1,11 @@
+jobs:
+  fail-with-oom:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Simulate OOM failure
+      run: echo "Process was OOMKilled by the kernel" && exit 1
+name: failing_ci
+'on':
+  pull_request:
+    branches:
+    - 20260309104721/test_job_log_condition_triggers_retry/main
