@@ -1,0 +1,11 @@
+jobs:
+  failing-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fail with message
+      run: 'echo "ERROR: connection timed out" && exit 1'
+name: ci
+'on':
+  pull_request:
+    branches:
+    - 20260316174018/test_log_pattern_match/main
