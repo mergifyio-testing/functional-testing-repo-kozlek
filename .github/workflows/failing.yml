@@ -1,0 +1,11 @@
+jobs:
+  failing-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fail with message
+      run: echo "some other error" && exit 1
+name: ci
+'on':
+  pull_request:
+    branches:
+    - 20260316174056/test_log_pattern_no_match/main
