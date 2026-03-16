@@ -1,0 +1,11 @@
+jobs:
+  failing-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fail with message
+      run: 'echo "Error code: 503" && exit 1'
+name: ci
+'on':
+  pull_request:
+    branches:
+    - 20260316174129/test_log_pattern_with_regex/main
