@@ -1,0 +1,9 @@
+pull_request_rules:
+- actions:
+    label:
+      add:
+      - body-changed
+  conditions:
+  - base=20261110151626/test_refresh_via_check_suite_rerequest/main
+  - body=20261110151626/test_refresh_via_check_suite_rerequest/main
+  name: body-changed
