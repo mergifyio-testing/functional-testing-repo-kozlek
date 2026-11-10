@@ -1,0 +1,12 @@
+merge_protections_settings:
+  auto_merge_conditions: true
+queue_rules:
+- batch_max_wait_time: 0 s
+  batch_size: 2
+  merge_conditions:
+  - status-success=continuous-integration/fake-ci
+  merge_method: merge-batch
+  name: default
+  queue_conditions:
+  - base=20261110152514/test_merge_batch_through_queue_branch/main
+  - label=queue
