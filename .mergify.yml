@@ -1,0 +1,18 @@
+merge_protections:
+- if:
+  - base=20261110151922/test_check_run_inserted_and_updated/main
+  name: feature requirements
+  success_conditions:
+  - base=20261110151922/test_check_run_inserted_and_updated/main
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - label=queue
+  - base=20261110151922/test_check_run_inserted_and_updated/main
+  name: Queue
+queue_rules:
+- batch_size: 2
+  merge_conditions:
+  - status-success=continuous-integration/fake-ci
+  name: default
